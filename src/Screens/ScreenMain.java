@@ -248,7 +248,7 @@ public class ScreenMain extends JFrame {
         btnLimpar.setHorizontalAlignment(JLabel.CENTER);
         btnLimpar.setVerticalAlignment(JLabel.CENTER);
         btnLimpar.setBackground(new Color(185, 185, 185));
-        btnLimpar.addActionListener(e -> Limpar());
+        btnLimpar.addActionListener(e -> LimparDados());
 
         // ----------------------------------------------------------------------//
 
@@ -325,7 +325,7 @@ public class ScreenMain extends JFrame {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Aviso", JOptionPane.WARNING_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "Pessoa Cadastrada com sucesso!", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-            LimparDados();
+            LimparFields();
         }
 
     }
@@ -342,18 +342,18 @@ public class ScreenMain extends JFrame {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Aviso", JOptionPane.WARNING_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "Pessoa Deletada do Sistema!", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-            LimparDados();
+            LimparFields();
         }
         
     }
 
     // reutilizo a funçao limparDados ja criada e apenas dou uma mensagem ao usuário
-    private void Limpar() {
+    private void LimparDados() {
         JOptionPane.showMessageDialog(null, "Dados Limpos com Sucesso", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-        LimparDados();
+        LimparFields();
     }
 
-    private void LimparDados() {
+    private void LimparFields() {
         // para cda campo do JTextField presente na listaFields, iremos setar o texto do
         // campo como vazio
         for (JTextField campo : listaFields) {
