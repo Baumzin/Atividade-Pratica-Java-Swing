@@ -217,12 +217,12 @@ public class ScreenMain extends JFrame {
         inativo.setBounds(940, 430, 80, altura);
         Situacao.add(ativo);
         Situacao.add(inativo);
-        //------------------ Adicionando os campos ao Array ---------------------//
+        // ------------------ Adicionando os campos ao Array ---------------------//
         listaFields = new JTextField[] {
-            fieldNome, fieldEmail, fieldLogradouro, fieldMunicipio,
-            fieldNumero, fieldBairro, fieldTelefone, fieldComplemento,
-            fieldCEP, fieldUF, fieldRG, fieldOrgEx, fieldCPF, fieldPais,
-            fieldLadoUF
+                fieldNome, fieldEmail, fieldLogradouro, fieldMunicipio,
+                fieldNumero, fieldBairro, fieldTelefone, fieldComplemento,
+                fieldCEP, fieldUF, fieldRG, fieldOrgEx, fieldCPF, fieldPais,
+                fieldLadoUF
         };
         // ----------------------------------------------------------------------//
         // ------------------ Criando os Botoes ---------------------------------//
@@ -242,7 +242,7 @@ public class ScreenMain extends JFrame {
         btnExcluir.setBackground(new Color(255, 166, 0));
         btnExcluir.addActionListener(e -> Excluir());
 
-        //Botao Limpar
+        // Botao Limpar
         btnLimpar = new JButton("Limpar");
         btnLimpar.setBounds(260, 470, 100, altura);
         btnLimpar.setHorizontalAlignment(JLabel.CENTER);
@@ -299,7 +299,7 @@ public class ScreenMain extends JFrame {
         painel.add(inativo);
         painel.add(ativo);
         painel.add(fieldLadoUF);
-        //----- Botoes ------------//
+        // ----- Botoes ------------//
         painel.add(btnConfirmar);
         painel.add(btnExcluir);
         painel.add(btnLimpar);
@@ -312,7 +312,8 @@ public class ScreenMain extends JFrame {
         this.setVisible(true);
     }
 
-    //verificamos se todos os dados necessários foram preenchidos e entao registraamos a nova pessoa cadastrada 
+    // verificamos se todos os dados necessários foram preenchidos e entao
+    // registraamos a nova pessoa cadastrada
     private void Confirmar() {
         // Verificando se os campos foram preenchidos
         if (fieldNome.getText().isEmpty() || fieldComplemento.getText().isEmpty() || fieldMunicipio.getText().isEmpty()
@@ -323,13 +324,14 @@ public class ScreenMain extends JFrame {
                 || fieldRG.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Aviso", JOptionPane.WARNING_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, "Pessoa Cadastrada com sucesso!", "Aviso",
-                    JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Pessoa Cadastrada com sucesso!", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            LimparDados();
         }
-        LimparDados();
+
     }
 
-    //para excluir a pessoa, primeiro identificamos se todos os campos necessários foram preenchidos para só depois deletá-la totalmente
+    // para excluir a pessoa, primeiro identificamos se todos os campos necessários
+    // foram preenchidos para só depois deletá-la totalmente
     private void Excluir() {
         if (fieldNome.getText().isEmpty() || fieldComplemento.getText().isEmpty() || fieldMunicipio.getText().isEmpty()
                 || fieldBairro.getText().isEmpty() || fieldCEP.getText().isEmpty() || fieldTelefone.getText().isEmpty()
@@ -339,27 +341,28 @@ public class ScreenMain extends JFrame {
                 || fieldRG.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Aviso", JOptionPane.WARNING_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, "Pessoa Deletada do Sistema!", "Aviso",
-                    JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Pessoa Deletada do Sistema!", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            LimparDados();
         }
-        LimparDados();
+        
     }
 
-    //reutilizo a funçao limparDados ja criada e apenas dou uma mensagem ao usuário 
+    // reutilizo a funçao limparDados ja criada e apenas dou uma mensagem ao usuário
     private void Limpar() {
         JOptionPane.showMessageDialog(null, "Dados Limpos com Sucesso", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         LimparDados();
     }
 
     private void LimparDados() {
-        //para cda campo do JTextField presente na listaFields, iremos setar o texto do campo como vazio
+        // para cda campo do JTextField presente na listaFields, iremos setar o texto do
+        // campo como vazio
         for (JTextField campo : listaFields) {
             campo.setText("");
         }
 
-        //Aqui irei voltar esses campos em sua configuraçao inicial 
-        tipoPessoa.setSelectedIndex(0); //setando o campo tipoPessoa para o indice 0
-        forn.setSelected(false); //estara desmarcado após a execução da função
+        // Aqui irei voltar esses campos em sua configuraçao inicial
+        tipoPessoa.setSelectedIndex(0); // setando o campo tipoPessoa para o indice 0
+        forn.setSelected(false); // estara desmarcado após a execução da função
         Situacao.clearSelection();
     }
 }
