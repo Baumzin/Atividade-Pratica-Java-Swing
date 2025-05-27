@@ -16,7 +16,7 @@ public class ScreenMain extends JFrame {
     private JCheckBox forn;
     private JComboBox<String> tipoPessoa;
     private JTextField[] listaFields;
-    ButtonGroup Situacao = new ButtonGroup();
+    private ButtonGroup Situacao = new ButtonGroup();
 
     private int altura = 25;
 
