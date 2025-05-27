@@ -70,6 +70,7 @@ public class Functions {
 
         // aqui estou limpando o grupo de botao Situacao e o CheckBox do fornecedor e
         // deixando-os desmarcados (caso estejam preenchidos)
+        //(conferindo se o que estou ccomparando está preenchido para ser apagado/desmarcado)
         if (fieldComplemento != null) {
             fieldComplemento.setText("");
         }
