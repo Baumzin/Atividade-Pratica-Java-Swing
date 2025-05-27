@@ -85,7 +85,7 @@ public class ScreenMain extends JFrame {
         lblPais.setVerticalAlignment(JLabel.CENTER);
         fieldPais = new JTextField("BRASIL");
         fieldPais.setBounds(180, 270, 430, altura);
-        fieldPais.setBackground(Color.GRAY);
+        fieldPais.setBackground(Color.LIGHT_GRAY);
 
         // Municipio
         lblMunicipio = new JLabel("Município");
@@ -96,7 +96,7 @@ public class ScreenMain extends JFrame {
         lblMunicipio.setVerticalAlignment(JLabel.CENTER);
         fieldMunicipio = new JTextField();
         fieldMunicipio.setBounds(180, 310, 800, altura);
-        fieldMunicipio.setBackground(Color.GRAY);
+        fieldMunicipio.setBackground(Color.LIGHT_GRAY);
 
         // Logradouro
         lblLogradouro = new JLabel("Logradouro");
@@ -192,7 +192,7 @@ public class ScreenMain extends JFrame {
         fieldUF.setBounds(780, 270, 40, altura);
         fieldLadoUF = new JTextField("");
         fieldLadoUF.setBounds(830, 270, 150, altura);
-        fieldLadoUF.setBackground(Color.GRAY);
+        fieldLadoUF.setBackground(Color.LIGHT_GRAY);
         // --------------------------------------------------------------------//
         // --------------------------- 4ª Coluna ------------------------------//
         // Fornecedor
