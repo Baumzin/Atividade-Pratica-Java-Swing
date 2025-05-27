@@ -32,7 +32,7 @@ public class ScreenMain extends JFrame {
         // ------------------- Titulo --------------------------------//
         lblTitulo = new JLabel("Cadastro de Pessoa");
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 60));
-        lblTitulo.setForeground(Color.ORANGE);
+        lblTitulo.setForeground(new Color(255, 128, 0));
         lblTitulo.setBounds(20, 30, 600, 60);
         // ------------------- 1ª Coluna -----------------------------//
         // Tipo de Pessoa
@@ -107,7 +107,6 @@ public class ScreenMain extends JFrame {
         lblLogradouro.setVerticalAlignment(JLabel.CENTER);
         fieldLogradouro = new JTextField();
         fieldLogradouro.setBounds(180, 350, 800, altura);
-        fieldLogradouro.setBackground(Color.GRAY);
 
         // Número
         lblNumero = new JLabel("Numero");
@@ -158,7 +157,7 @@ public class ScreenMain extends JFrame {
         lblComplemento.setVerticalAlignment(JLabel.CENTER);
         lblComplemento.setHorizontalAlignment(JLabel.CENTER);
         fieldComplemento = new JTextField();
-        fieldComplemento.setBounds(500, 390, 430, altura);
+        fieldComplemento.setBounds(500, 390, 480, altura);
 
         // Telefone
         lblTelefone = new JLabel("Telefone");
@@ -232,23 +231,25 @@ public class ScreenMain extends JFrame {
         btnConfirmar.setBounds(20, 470, 100, altura);
         btnConfirmar.setHorizontalAlignment(JLabel.CENTER);
         btnConfirmar.setVerticalAlignment(JLabel.CENTER);
-        btnConfirmar.setBackground(new Color(255, 166, 0));
+        btnConfirmar.setBackground(new Color(255, 128, 0));
+        btnConfirmar.setForeground(Color.WHITE);
         btnConfirmar.addActionListener(e -> Functions.confirmar(listaFields, Situacao, forn, fieldComplemento, tipoPessoa));
 
         // Botao Excluir
         btnExcluir = new JButton("Excluir");
-        btnExcluir.setBounds(140, 470, 100, altura);
+        btnExcluir.setBounds(125, 470, 100, altura);
         btnExcluir.setHorizontalAlignment(JLabel.CENTER);
         btnExcluir.setVerticalAlignment(JLabel.CENTER);
-        btnExcluir.setBackground(new Color(255, 166, 0));
+        btnExcluir.setBackground(new Color(255, 128, 0));
+        btnExcluir.setForeground(Color.WHITE);
         btnExcluir.addActionListener(e -> Functions.excluir(listaFields, Situacao, forn, fieldComplemento, tipoPessoa));
 
         // Botao Limpar
         btnLimpar = new JButton("Limpar");
-        btnLimpar.setBounds(260, 470, 100, altura);
+        btnLimpar.setBounds(230, 470, 100, altura);
         btnLimpar.setHorizontalAlignment(JLabel.CENTER);
         btnLimpar.setVerticalAlignment(JLabel.CENTER);
-        btnLimpar.setBackground(new Color(185, 185, 185));
+        btnLimpar.setBackground(new Color(192, 192, 192));
         btnLimpar.addActionListener(e -> Functions.limpar(listaFields, Situacao, forn, fieldComplemento, tipoPessoa));
 
         // ----------------------------------------------------------------------//
