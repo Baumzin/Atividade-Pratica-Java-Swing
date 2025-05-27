@@ -2,14 +2,15 @@ package Screens;
 
 import java.awt.*;
 import javax.swing.*;
+//importo as funçoes criadas na pasta Logic para a pasta Screens no módulo ScreenMain
 import Logic.*;
 
 public class ScreenMain extends JFrame {
     private JPanel painel;
     private JTextField fieldNome, fieldEmail, fieldLogradouro, fieldMunicipio, fieldNumero, fieldBairro, fieldTelefone,
-            fieldComplemento, fieldCEP, fieldUF, fieldRG, fieldOrgEx, fieldCPF, fieldPais, fieldLadoUF;
+    fieldComplemento, fieldCEP, fieldUF, fieldRG, fieldOrgEx, fieldCPF, fieldPais, fieldLadoUF;
     private JLabel lblNome, lblEmail, lblLogradouro, lblMunicipio, lblNumero, lblBairro, lblTelefone, lblComplemento,
-            lblCEP, lblUF, lblOrgEx, lblCPF, lblRG, lblPais, lblTipo, lblTitulo, lblFornecedor, lblSit;
+    lblCEP, lblUF, lblOrgEx, lblCPF, lblRG, lblPais, lblTipo, lblTitulo, lblFornecedor, lblSit;
     private JButton btnConfirmar, btnExcluir, btnLimpar;
     private JRadioButton ativo, inativo;
     private JCheckBox forn;
@@ -222,7 +223,7 @@ public class ScreenMain extends JFrame {
         listaFields = new JTextField[] {
                 fieldNome, fieldEmail, fieldLogradouro, fieldMunicipio,
                 fieldNumero, fieldBairro, fieldTelefone, fieldCEP, fieldUF, 
-                fieldRG, fieldOrgEx, fieldCPF, fieldPais
+                fieldRG, fieldOrgEx, fieldCPF, fieldPais,
         };
         // ----------------------------------------------------------------------//
         // ------------------ Criando os Botoes ---------------------------------//
@@ -232,7 +233,7 @@ public class ScreenMain extends JFrame {
         btnConfirmar.setHorizontalAlignment(JLabel.CENTER);
         btnConfirmar.setVerticalAlignment(JLabel.CENTER);
         btnConfirmar.setBackground(new Color(255, 166, 0));
-        btnConfirmar.addActionListener(e -> Functions.confirmar(listaFields));
+        btnConfirmar.addActionListener(e -> Functions.confirmar(listaFields, Situacao, forn, fieldComplemento, tipoPessoa));
 
         // Botao Excluir
         btnExcluir = new JButton("Excluir");
@@ -240,7 +241,7 @@ public class ScreenMain extends JFrame {
         btnExcluir.setHorizontalAlignment(JLabel.CENTER);
         btnExcluir.setVerticalAlignment(JLabel.CENTER);
         btnExcluir.setBackground(new Color(255, 166, 0));
-        btnExcluir.addActionListener(e -> Functions.excluir(listaFields));
+        btnExcluir.addActionListener(e -> Functions.excluir(listaFields, Situacao, forn, fieldComplemento, tipoPessoa));
 
         // Botao Limpar
         btnLimpar = new JButton("Limpar");
@@ -248,7 +249,7 @@ public class ScreenMain extends JFrame {
         btnLimpar.setHorizontalAlignment(JLabel.CENTER);
         btnLimpar.setVerticalAlignment(JLabel.CENTER);
         btnLimpar.setBackground(new Color(185, 185, 185));
-        btnLimpar.addActionListener(e -> Functions.limpar(listaFields));
+        btnLimpar.addActionListener(e -> Functions.limpar(listaFields, Situacao, forn, fieldComplemento, tipoPessoa));
 
         // ----------------------------------------------------------------------//
 
